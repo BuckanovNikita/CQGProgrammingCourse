@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/SourceCode/cqg_labs/lab2/main.cpp
+iostream
+-
+simple_vector.h
+D:/SourceCode/cqg_labs/lab2/simple_vector.h
+simple_vector.cpp
+D:/SourceCode/cqg_labs/lab2/simple_vector.cpp
+vector
+-
+
+D:/SourceCode/cqg_labs/lab2/simple_vector.cpp
+simple_vector.h
+D:/SourceCode/cqg_labs/lab2/simple_vector.h
+
+D:/SourceCode/cqg_labs/lab2/simple_vector.h
+stddef.h
+-
+utility
+-
+

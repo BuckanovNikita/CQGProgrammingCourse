@@ -1,0 +1,6 @@
+D:/SourceCode/CQG_lab1/cmake-build-debug/CMakeFiles/task1.dir
+D:/SourceCode/CQG_lab1/cmake-build-debug/CMakeFiles/task2.dir
+D:/SourceCode/CQG_lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/SourceCode/CQG_lab1/cmake-build-debug/CMakeFiles/task4.dir
+D:/SourceCode/CQG_lab1/cmake-build-debug/CMakeFiles/task5.dir
+D:/SourceCode/CQG_lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
