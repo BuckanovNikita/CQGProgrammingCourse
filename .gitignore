@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+*.xml
+*.cmake
+*.iml
+*.txt
+*.log
+*.bin
+*cmake-*
+
