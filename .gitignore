@@ -38,3 +38,6 @@
 *.bin
 *cmake-*
 
+lab4/.ipynb_checkpoints/Untitled-checkpoint.ipynb
+lab4/russian_names.csv
+lab4/Untitled.ipynb
