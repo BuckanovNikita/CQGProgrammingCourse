@@ -10,9 +10,18 @@ public:
 
     explicit copy_ptr(T* i_ptr) : m_ptr(i_ptr) {}
 
-    copy_ptr(copy_ptr<T>& other_ptr) : m_ptr(new T(*other_ptr)) {}
+    template<class Y>
+    copy_ptr(copy_ptr<Y>& other_ptr) : m_ptr(new T(*other_ptr)) {}
 
-    copy_ptr<T>& operator=(const copy_ptr<typename remove_cv<T>::type>& other_ptr)
+    template <class Y>
+    copy_ptr<T>& operator=(const copy_ptr<Y>& other_ptr)
+    {
+        m_ptr = new T(*other_ptr);
+        return *this;
+    }
+
+
+    /*copy_ptr<T>& operator=(const copy_ptr<typename remove_cv<T>::type>& other_ptr)
     {
         m_ptr = new T(*other_ptr);
         return *this;
@@ -22,7 +31,7 @@ public:
     {
         m_ptr = new T(*other_ptr);
         return *this;
-    }
+    }*/
 
     copy_ptr(copy_ptr<T>&& other_ptr) noexcept : m_ptr(other_ptr.get()) {}
 
@@ -101,8 +110,8 @@ int main() {
     cout<<endl;
 
     copy_ptr<string> p6 = make_copy<string>(5, 'c');
-    copy_ptr<const string> p7 = make_copy<const string>(10,'a');
-    p7 = p6;
+    copy_ptr<const string> p7 = p6;//make_copy<const string>(10,'a');
+    //p7 = p6;
     cout<<*p6<<" "<<*p7<<endl;
 
     copy_ptr<string> p8 = make_copy<string>(5, 'c');
