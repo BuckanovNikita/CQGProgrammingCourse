@@ -45,20 +45,22 @@ DWORD WINAPI bar_controller(LPVOID bar_time_)
 		char tmp[256];
 		strftime(tmp, 256, "%X", &(tick->tickTime));
 
+		if (bar.start_time!=0 && (mktime(&(tick->tickTime)) - bar.start_time) > bar_time)
+		{
+			cout << "Bar closed [" << bar.open << "; " << bar.high << "; " << bar.low << "; " << bar.close << "]" << endl;
+			bar = BAR();
+			bar.start_time = 0;
+		}
+
 		bar.update(tick->tickPrice);
 		if (bar.start_time == 0)
 			bar.start_time = mktime(&(tick->tickTime));
-		cout << "Diff Time: " << mktime(&(tick->tickTime)) - bar.start_time << endl;
-		if (mktime(&(tick->tickTime)) - bar.start_time > bar_time)
-		{
-			cout << "Bar closed [" << bar.open << "; " << bar.high << "; " << bar.low << "; " << bar.close << "]" <<  endl;
-			bar = BAR();
-		}
+		
 		cout << tick->tickPrice << " @ " << tmp << endl;
+		cout << "Diff Time: " << mktime(&(tick->tickTime)) - bar.start_time << " " << bar_time << endl;
 		
-
 		
-
+		
 		delete tick;
 	}
 	return 0;
